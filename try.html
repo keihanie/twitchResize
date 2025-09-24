@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Twitch Badge Resizer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    input[type="file"] {
+      margin-bottom: 20px;
+    }
+    canvas {
+      display: none;
+    }
+    .downloads a {
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Twitch Badge Resizer</h2>
+  <p>Select an image to resize into 72x72, 36x36, and 18x18 pixels.</p>
+  <input type="file" id="upload" accept="image/*">
+  <div class="downloads" id="downloadLinks"></div>
+
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const upload = document.getElementById('upload');
+    const downloadLinks = document.getElementById('downloadLinks');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const sizes = [72, 36, 18];
+
+    upload.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const img = new Image();
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+        img.onload = function () {
+          downloadLinks.innerHTML = ''; // Clear previous links
+
+          sizes.forEach(size => {
+            canvas.width = size;
+            canvas.height = size;
+            ctx.clearRect(0, 0, size, size);
+            ctx.drawImage(img, 0, 0, size, size);
+
+            const resizedDataUrl = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = resizedDataUrl;
+            link.download = `badge_${size}x${size}.png`;
+            link.textContent = `Download ${size}x${size}`;
+            downloadLinks.appendChild(link);
+          });
+        };
+        img.src = event.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    });
+  </script>
+
+</body>
+</html>
