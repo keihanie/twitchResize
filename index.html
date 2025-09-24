@@ -99,11 +99,15 @@
                                     </div>
                                 </form>
                             </div>
+                            <div id="results" class="mt-2 text-center"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+<!-- Preview Resized Images -->
+
+
         <!--Hero Area End-->
         <!--? Donations Card Start -->
         <section id="dono" class="pricing-card-area">
@@ -315,6 +319,50 @@
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.getElementById('imageUpload').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const img = new Image();
+    img.onload = function() {
+        const sizes = [72, 36, 18];
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = ""; // clear previous
+
+        sizes.forEach(size => {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, size, size);
+
+            // Create preview
+            const preview = document.createElement('img');
+            preview.src = canvas.toDataURL("image/png");
+            preview.classList.add("m-2", "border");
+            preview.style.width = size + "px";
+            preview.style.height = size + "px";
+
+            // Create download button
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL("image/png");
+            link.download = `badge_${size}x${size}.png`;
+            link.textContent = `Download ${size}x${size}`;
+            link.classList.add("btn", "btn-sm", "btn-outline-primary", "d-block", "mb-2");
+
+            const wrapper = document.createElement('div');
+            wrapper.classList.add("d-inline-block", "text-center", "mx-3");
+            wrapper.appendChild(preview);
+            wrapper.appendChild(link);
+
+            resultsDiv.appendChild(wrapper);
+        });
+    };
+    img.src = URL.createObjectURL(file);
+});
+</script>
 
 </body>
 
