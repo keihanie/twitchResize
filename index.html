@@ -1,74 +1,321 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="zxx">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Twitch Badge Resizer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-    }
-    input[type="file"] {
-      margin-bottom: 20px;
-    }
-    canvas {
-      display: none;
-    }
-    .downloads a {
-      display: block;
-      margin: 10px 0;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Badge Resizer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon.png">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/progressbar_barfiller.css">
+    <link rel="stylesheet" href="assets/css/gijgo.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/animated-headline.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
+
 <body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparent">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper d-flex align-items-center justify-content-between">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu f-right d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="#dono">Donations</a></li>
+                    
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header-btn -->
+                        <div class="header-btns d-none d-lg-block f-right">
+                            <a href="https://www.twitch.tv/keihanie" target="_blank" class="mr-40">ttv/keihanie</a>
+                            <a href="https://www.twitch.tv/products/keihanie" target="_blank" class="btn">Subscribe</a>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <!-- header end -->
+    <main>
+        <!-- Hero Area Start-->
+        <div class="slider-area">
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-9">
+                            <!-- Hero Caption -->
+                            <div class="hero__caption text-center">
+                                <p>Tired of resizing one by one? We got you!</p>
+                                <h1>Twitch Badge Resizer</h1>
 
-  <h2>Twitch Badge Resizer</h2>
-  <p>Select an image to resize into 72x72, 36x36, and 18x18 pixels.</p>
-  <input type="file" id="upload" accept="image/*">
-  <div class="downloads" id="downloadLinks"></div>
+                                <!-- Upload Button -->
+                                <form action="#" class="d-flex justify-content-center mt-3">
+                                    <div class="input-form m-0 p-0">
+                                        <input type="file" id="imageUpload" accept="image/*" hidden>
+                                        <label for="imageUpload" class="btn btn-primary mb-0">
+                                            <i class="ti-image"></i> Upload Image
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Hero Area End-->
+        <!--? Donations Card Start -->
+        <section id="dono" class="pricing-card-area">
+            <div class="container">
+                <div class="row">
 
-  <canvas id="canvas"></canvas>
+                    <!-- PayPal -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
+                        <div class="single-card text-center mb-30">
+                            <div class="card-top">
 
-  <script>
-    const upload = document.getElementById('upload');
-    const downloadLinks = document.getElementById('downloadLinks');
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
+                                <h4>PayPal Donation</h4>
+                                <p>Support me via PayPal</p>
+                            </div>
+                            <div class="card-mid">
+                                <h4>Any Amount <span>❤️</span></h4>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Your support keeps the project alive!</p>
+                                <a href="https://streamelements.com/keihanie/tip" target="_blank" class="borders-btn">
+                                    Donate with PayPal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-    const sizes = [72, 36, 18];
+                    <!-- GCash -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
+                        <div class="single-card text-center mb-30">
+                            <div class="card-top">
 
-    upload.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
+                                <h4>GCash Donation</h4>
+                                <p>Local support (PH)</p>
+                            </div>
+                            <div class="card-mid">
+                                <h4>Send via QR  <span>❤️</span></h4>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Scan the QR code to donate instantly.</p>
+                                <!-- Trigger modal -->
+                                <button type="button" class="borders-btn" data-bs-toggle="modal"
+                                    data-bs-target="#gcashModal">
+                                    View GCash QR
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-      const img = new Image();
-      const reader = new FileReader();
+                    <!-- GCash Modal -->
+                    <div class="modal fade" id="gcashModal" tabindex="-1" aria-labelledby="gcashModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="gcashModalLabel">Donate via GCash</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <img src="assets/img/gcash.jpg" alt="GCash QR" class="img-fluid rounded">
+                                    <p class="mt-3">Scan this QR code with your GCash app to donate 💙</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-      reader.onload = function (event) {
-        img.onload = function () {
-          downloadLinks.innerHTML = ''; // Clear previous links
 
-          sizes.forEach(size => {
-            canvas.width = size;
-            canvas.height = size;
-            ctx.clearRect(0, 0, size, size);
-            ctx.drawImage(img, 0, 0, size, size);
+                    <!-- Throne -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
+                        <div class="single-card text-center mb-30">
+                            <div class="card-top">
 
-            const resizedDataUrl = canvas.toDataURL('image/png');
-            const link = document.createElement('a');
-            link.href = resizedDataUrl;
-            link.download = `badge_${size}x${size}.png`;
-            link.textContent = `Download ${size}x${size}`;
-            downloadLinks.appendChild(link);
-          });
-        };
-        img.src = event.target.result;
-      };
+                                <h4>Throne Gifts</h4>
+                                <p>Buy me a gift!</p>
+                            </div>
+                            <div class="card-mid">
+                                <h4>Wishlist Items <span>❤️</span></h4>
+                            </div>
+                            <div class="card-bottom">
+                                <p>Pick a gift directly from my Throne wishlist.</p>
+                                <a href="https://throne.com/keihanie" target="_blank" class="borders-btn">
+                                    View Wishlist
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-      reader.readAsDataURL(file);
-    });
-  </script>
+                </div>
+            </div>
+        </section>
+        <!-- Donations Card End -->
+
+
+
+        <!-- Want To work 2-->
+        <section class="wantToWork-area">
+            <div class="container">
+                <div class="wants-wrapper w-padding2">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-xl-6 col-lg-6 col-md-7">
+                            <div class="wantToWork-caption wantToWork-caption2">
+                                <h2>Any feedbacks or suggestions?</h2>
+                                <p>feel free to contact me via email or when we go live on twitch.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-5 ">
+                            <div class="double-btn f-right ">
+                                <a href="mailto:keihaniettv@gmail.com" class="btn w-btn wantToWork-btn mr-20">Email</a>
+                                <a href="https://www.twitch.tv/keihanie" target="_blank" class="border-btn w-btn wantToWork-btn">Twitch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Want To work End 2-->
+    </main>
+   <footer>
+  <div class="footer-wrappr section-bg"
+       data-background="assets/img/gallery/footer_bg.png"
+       style="background-image: url('assets/img/gallery/footer_bg.png'); background-size: cover; background-position: center;">
+    <div class="footer-area footer-padding" style="padding-top: 8px !important; padding-bottom: 8px !important;">
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+          <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+            <div class="single-footer-caption mb-0">
+              <!-- social -->
+           <div class="footer-social" style="margin-top:4px !important; margin-bottom:4px !important;">
+  <a href="https://twitter.com/keihaniee" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://instagram.com/keihaniee" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://bento.me/keihanie" target="_blank"><i class="fab fa-discord"></i></a>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer-bottom area -->
+      <div class="footer-bottom-area">
+        <div class="container">
+          <div class="footer-border" style="padding:6px 0 6px !important;">
+            <div class="row">
+              <div class="col-xl-10">
+                <div class="footer-copy-right">
+                  <p style="margin-bottom:4px; line-height:1.4; font-size:13px; color:#C2C5DB">
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                    All rights reserved | This template is made with
+                    <i class="fa fa-heart" aria-hidden="true"></i> by
+                    <a href="https://colorlib.com" target="_blank" style="color:inherit">Colorlib</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- .footer-bottom-area -->
+
+    </div> <!-- .footer-area -->
+  </div> <!-- .footer-wrappr -->
+</footer>
+
+
+    <!-- Scroll Up -->
+    <div id="back-top">
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    <!-- Progress -->
+    <script src="./assets/js/jquery.barfiller.js"></script>
+
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
